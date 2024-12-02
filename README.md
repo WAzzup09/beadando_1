@@ -4,9 +4,9 @@
 
 ## Aki nem tudja mit válasszon, neki néhány ötlet:
 ### Kalandjáték.
-    Interaktív módon, a játékos választásokkal irányítja a játékot. Pl. "Sötét erdőben jársz és útelágazáshoz érsz. Merre fordulsz? Balra vagy jobbra?" és ennek a választásnak a függvényében folytatódik a játék.
+Interaktív módon, a játékos választásokkal irányítja a játékot. Pl. "Sötét erdőben jársz és útelágazáshoz érsz. Merre fordulsz? Balra vagy jobbra?" és ennek a választásnak a függvényében folytatódik a játék.
 ### ASCII rajzok készítése.
-    A program indulása utána  felhasználó több (legalább tíz) ASCII rajz közül választhat, hogy mit akar kirajzoltatni. A rajzok a kódba ne *"statikusan"* legyenek eltárolva, hanem ciklusok rajzolják azt ki.
+A program indulása utána  felhasználó több (legalább tíz) ASCII rajz közül választhat, hogy mit akar kirajzoltatni. A rajzok a kódba ne *"statikusan"* legyenek eltárolva, hanem ciklusok rajzolják azt ki.
 
 De, akinek van saját ötlete és szeretné megvalósítani, akkor lehet az is.
 

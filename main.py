@@ -1,4 +1,7 @@
 import random
+import fuggvenyek
 
-def main():
-    szamok = [random.randint(1,1000) for _ in range(100)]
+
+szamok = fuggvenyek.intgen(1,100000000,100000)
+
+print(szamok)

@@ -6,7 +6,7 @@ import os
 def menu():
     os.system('cls')
 
-    rajzok = ["(0) Kilépés", "(1) Háromszög", ""]
+    rajzok = ["(0) Kilépés", "(1) Háromszög"]
     art = -1
 
     while art != 0:
@@ -24,7 +24,7 @@ def menu():
         
 
 def haromszog(n):
-    minta = ["*"]
+    minta = ["▲"]
     for i in range(n):
         szokoz = " " * (2**i)
         minta = [szokoz + x + szokoz for x in minta] + [x + " " + x for x in minta]

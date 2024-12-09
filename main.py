@@ -25,7 +25,7 @@ def menu():
         elif art == 3:
             karifa(75)
         elif art == 4:
-            csillag(7)
+            csillag(5)
         
         
 # Sierpiński-háromszög
@@ -53,9 +53,23 @@ def karifa(n):
 
 # Csillag
 def csillag(n):
+    # Teteje
+    minta1 = []
     for i in range(n-2):
-        print(' '*(n-i), '*'*((2*i)-1))
+        print(' '*(n-i-1), '*'*((2*i)-1))
+
+    # Közepe
     for i in range(n):
-        print('*'*(n+i),' '*(i-1),)
+        minta1.append(' '*(n-i) + '*'*((2*i)-1))
+    temp = minta1[::-1]
+    temp = [temp[0],temp[1]]
+    print('\n'.join(temp))
+
+    # Alja
+    minta2 = []
+    for i in range(n):
+        minta2.append('*'*(n-i) + ' '*((2*i)-2) + '*'*(n-i))
+    temp = [minta2[i-1], minta2[i]]
+    print('\n'.join(temp))
 
 menu()

@@ -6,7 +6,7 @@ import os
 def menu():
     os.system('cls')
 
-    rajzok = ["(0) Kilépés", "(1) Háromszög", "(2) Négyzet", "(3) Fenyőfa"]
+    rajzok = ["(0) Kilépés", "(1) Háromszög", "(2) Négyzet", "(3) Fenyőfa", "(4) Csillag", "(5) Kör"]
     art = -1
 
     while art != 0:
@@ -25,7 +25,9 @@ def menu():
         elif art == 3:
             karifa(75)
         elif art == 4:
-            csillag(5)
+            csillag(5) #NE VÁLTOZTASD MEG AZ n-T
+        elif art == 5:
+            kor(25)
         
         
 # Sierpiński-háromszög
@@ -68,8 +70,26 @@ def csillag(n):
     # Alja
     minta2 = []
     for i in range(n):
-        minta2.append('*'*(n-i) + ' '*((2*i)-2) + '*'*(n-i))
+        minta2.append(' '*(n-3) + '*'*(n-i) + ' '*((2*i)-n) + '*'*(n-i))
     temp = [minta2[i-1], minta2[i]]
     print('\n'.join(temp))
+
+def kor(atmero):
+    sugar = atmero / 2 - .5
+    r = (sugar + .25)**2 + 1
+
+    eredmeny = ''
+
+    for i in range(atmero):
+        y = (i - sugar)**2
+        for j in range(atmero):
+            x = (j - sugar)**2
+            if x + y <= r:
+                eredmeny = eredmeny + '#    '
+            else:
+                eredmeny = eredmeny + '     '
+        eredmeny = eredmeny + '\n\n'
+
+    print(eredmeny)
 
 menu()

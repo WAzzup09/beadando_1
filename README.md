@@ -11,3 +11,4 @@ A program indulása utána  felhasználó több (legalább tíz) ASCII rajz köz
 De, akinek van saját ötlete és szeretné megvalósítani, akkor lehet az is.
 
 (Forrás: [Classroom](https://classroom.google.com/c/NzA5MTk1NjY3ODQy/p/NzM2NDQ4NDYwNDI5/details))
+[GitHub](https://github.com/WAzzup09/beadando_1.git)

@@ -6,8 +6,7 @@ import os
 def menu():
     os.system('cls')
 
-    rajzok = ["(0) Kilépés", "(1) Háromszög", "(2) Négyzet", "(3) Fenyőfa", "(4) Csillag", "(5) Kör",
-              "(6) Gyémánt"]
+    rajzok = ["(0) Kilépés", "(1) Háromszög", "(2) Négyzet", "(3) Fenyőfa", "(4) Csillag", "(5) Kör", "(6) Gyémánt", "(7) Szív", "(8) Kockás Minta", "(9) Szinusz Hullám", "(10) Random Generált Útvesztő"]
     art = -1
 
     while art != 0:
@@ -32,7 +31,15 @@ def menu():
         elif art == 6:
             gyemant(20)
         elif art == 7:
-            sziv(10)
+            sziv()
+        elif art == 8:
+            kocka_minta(75, 75)
+        elif art == 9:
+            szinusz(10, 6, 100)
+        elif art == 10:
+            utveszto(10, 10)
+        else:
+            continue
         
         
 # Sierpiński-háromszög
@@ -119,34 +126,50 @@ def gyemant(n):
         minta1.append(' '*(n-i) + '*'*((2*i)-1))
     print('\n'.join(minta1[::-1]))
 
-#Szív
-def sziv(n):
-    '''
-    def draw_heart():
-    for row in range(6):
-        for col in range(7):
-            if (row == 0 and (col == 1 or col == 5)) or \
-               (row == 1 and (col == 0 or col == 6)) or \
-               (row == 2 and (col == 0 or col == 6)) or \
-               (row == 3 and (col == 1 or col == 5)) or \
-               (row == 4 and (col == 2 or col == 4)) or \
-               (row == 5 and col == 3):
+# Szív
+def sziv():
+    for sor in range(6):
+        for oszlop in range(7):
+            if (sor == 0 and (oszlop == 1 or oszlop == 5)) or \
+               (sor == 1 and (oszlop == 0 or oszlop == 3 or oszlop == 6)) or \
+               (sor == 2 and (oszlop == 0 or oszlop == 6)) or \
+               (sor == 3 and (oszlop == 1 or oszlop == 5)) or \
+               (sor == 4 and (oszlop == 2 or oszlop == 4)) or \
+               (sor == 5 and oszlop == 3):
                 print('*', end='')
             else:
                 print(' ', end='')
         print()
-    '''
-    for sor in range(n):
-        for oszlop in range(n+1):
-            if (sor == n-6 and (oszlop == n-5 or oszlop == n-1)) or \
-               (sor == n-5 and (oszlop == n-6 or oszlop == n)) or \
-               (sor == n-4 and (oszlop == n-6 or oszlop == n)) or \
-               (sor == n-3 and (oszlop == n-5 or oszlop == n-1)) or \
-               (sor == n-2 and (oszlop == n-4 or oszlop == n-2)) or \
-               (sor == n-1 and oszlop == n-3):
-                print('*', end='')
+
+# Kocka Minta
+def kocka_minta(sor, oszlop):
+    for i in range(sor):
+        for j in range(oszlop):
+            if (i + j) % 2 == 0:
+                print("#", end=" ")
             else:
-                print(' ', end='')
+                print(" ", end=" ")
         print()
+
+# Szinusz hullám
+def szinusz(bőség, frekvencia, szélesség):
+    import math
+
+    for i in range(szélesség):
+        y = int(bőség * math.sin(frekvencia * i * (math.pi / szélesség)))
+        print(" " * (y + bőség) + "*")
+
+# Random Generált útvesztő
+def utveszto(szelesseg, magassag):
+    utveszto = [["#" for _ in range(szelesseg)] for _ in range(magassag)]
+    
+    for i in range(1, magassag - 1, 2):
+        for j in range(1, szelesseg - 1, 2):
+            utveszto[i][j] = " "
+            irany = random.choice([(0, 1), (1, 0), (0, -1), (-1, 0)])
+            utveszto[i + irany[0]][j + irany[1]] = " "
+    
+    for sor in utveszto:
+        print("".join(sor))
 
 menu()
